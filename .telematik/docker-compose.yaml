@@ -1,0 +1,26 @@
+version: "3"
+services:
+  conlibre:
+    image: spilikin/conlibre
+    build: https://github.com/spilikin/conlibre.git#main
+    ports:
+      - target: 8080
+        published: 8081
+  vue:
+    build: ./cors-ui/
+    restart: always
+    ports:
+      - target: 80
+        published: 8082
+  nginx:
+    image: nginx:stable-alpine
+    restart: always
+    ports:
+      - target: 80
+        published: 80
+      - target: 443
+        published: 443
+    volumes:
+      - ./nginx/konnektor.h3.spilikin.dev.conf:/etc/nginx/conf.d/konnektor.h3.spilikin.dev.conf
+      - ./nginx/cors-ui.h3.spilikin.dev.conf:/etc/nginx/conf.d/cors-ui.h3.spilikin.dev.conf
+      - ~/.telematik/certbot/conf:/etc/letsencrypt
