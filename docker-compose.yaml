@@ -1,0 +1,23 @@
+version: "3"
+services:
+  conlibre:
+    image: spilikin/conlibre
+    build: https://github.com/spilikin/conlibre.git#main
+    ports:
+      - target: 8080
+        published: 8081
+  cors-ui:
+    build: ./cors-ui/
+    restart: always
+    ports:
+      - target: 80
+        published: 8080
+  cors-proxy:
+    build: ./cors-proxy/
+    restart: always
+    environment:
+      - KONNEKTOR_URL=http://conlibre:8080
+
+    ports:
+      - target: 8000
+        published: 8000
