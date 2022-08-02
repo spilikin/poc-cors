@@ -8,7 +8,7 @@ image::images/poc_architecture.png[Proof of Concept Architecture]
 
 [source,bash]
 ----
-docker compose up --build
+docker compose up --build -d
 # Test if it's working
 curl http://localhost:8080
 curl -u "admin:konnektor" http://localhost:8000/connector.sds
