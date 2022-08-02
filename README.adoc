@@ -1,0 +1,17 @@
+= 🪃 Proof of Concept for Konnektor with CORS
+
+image::images/logical_architecture.png[Logical Architecture]
+
+image::images/poc_architecture.png[Proof of Concept Architecture]
+
+== Run
+
+[source,bash]
+----
+docker compose up --build
+# Test if it's working
+curl http://localhost:8080
+curl -u "admin:konnektor" http://localhost:8000/connector.sds
+----
+
+Open `http://localhost:8080` in browser.
