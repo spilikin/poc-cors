@@ -15,6 +15,7 @@ Possible use cases:
 * Web based KIM Secure Mail
 * Signed web forms
 * OpenID Connect Authentication
+* Self administration of entries in https://github.com/gematik/api-vzd[TI Directory]
 
 == Architecture
 
