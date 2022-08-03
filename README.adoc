@@ -48,3 +48,7 @@ curl -u "admin:konnektor" http://localhost:8000/connector.sds
 ----
 
 Open `http://localhost:8080` in browser.
+
+image:images/Screenshot_Home.png[Home]
+
+image:images/Screenshot_GetCards.png[GetCards]
