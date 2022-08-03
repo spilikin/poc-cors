@@ -2,11 +2,11 @@
 
 == User Stories
 
-As a *Practitioner*, 
-I want to be able to use a browser in conjunction with security features, 
+As a *Practitioner*,
+I want to be able to use a browser in conjunction with security features,
 so that I can use the privacy and security critical applications without the need to install the application specific software.
 
-As an *Application Developer*, 
+As an *Application Developer*,
 I want to be able to use the APIs of Konnektor and other Telematik APIs from the browser,
 so that I can provide my users with easy and secure access to my web based application.
 
@@ -25,13 +25,13 @@ image::images/logical_architecture.png[Logical Architecture]
 
 == Proof of Concept
 
-The PoC consists of following components:
+The PoC consists of the following components:
 
-* Since the current Konnektors do not have the CORS, the link:cors-proxy/main.py[`CORS Proxy`] is used to add CORS and proxy everything else. 
+* Since the current Konnektors do not have the CORS, the link:cors-proxy/main.py[`CORS Proxy`] is used to add CORS and proxy everything else.
 `CORS Proxy` ist written in Python using https://fastapi.tiangolo.com[FastAPI]
 * To be able to run the PoC out of the box, very simple https://github.com/spilikin/conlibre[Konnektor API simulator] is embedded as a Docker image.
 * PoC can be extended to be used with the real Konnektor box
-* link:cors-ui/[`CORS UI Demo`] is a simple single page application written in https://vuejs.org[VUE]. 
+* link:cors-ui/[`CORS UI Demo`] is a simple single page application written in https://vuejs.org[VUE].
 The application itself is loaded from the different origin as the Konnektor API, but is able to access it, thanks to CORS.
 * Everything ist built and started using link:docker-compose.yaml[Docker Compose]
 
@@ -48,3 +48,7 @@ curl -u "admin:konnektor" http://localhost:8000/connector.sds
 ----
 
 Open `http://localhost:8080` in browser.
+
+image:images/Screenshot_Home.png[Home]
+
+image:images/Screenshot_GetCards.png[GetCards]
