@@ -25,7 +25,7 @@ image::images/logical_architecture.png[Logical Architecture]
 
 == Proof of Concept
 
-The PoC consists of following components:
+The PoC consists of the following components:
 
 * Since the current Konnektors do not have the CORS, the link:cors-proxy/main.py[`CORS Proxy`] is used to add CORS and proxy everything else. 
 `CORS Proxy` ist written in Python using https://fastapi.tiangolo.com[FastAPI]
